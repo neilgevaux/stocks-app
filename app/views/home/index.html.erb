@@ -1,2 +1,22 @@
-<h1>Stocking</h1>
-<p>Hello! This is my first Rails app.</p>
+<h1>Stocks</h1>
+<div class="form" data-turbo ="false"><!-- Wrap form in a div and add 'data-turbo ="false"' to stop Turnbo running on this element -->
+<%= form_tag root_path, :method => 'POST' do %>
+<%= text_field_tag 'ticker', nil, placeholder: "Enter Ticker Symbol", size: 50 %>
+<%= submit_tag 'Lookup' %>
+<% end %>
+</div>
+<br/>
+
+<% if @stock %>
+    <!-- Print error message if stock ticker symbol doesn't exist 
+    <% if @stock == "" %>
+        Sorry, that is not a valid symbol
+    <% end %>-->
+    <%= @stock.company_name %>
+    <br/>
+    <%= @stock.latest_price %>
+    <br/>
+    <!-- Print error message from home_controller.rb if no ticker symbol is entered -->
+    <% elsif @no_value %>
+    <%= @no_value %>
+<% end %>
