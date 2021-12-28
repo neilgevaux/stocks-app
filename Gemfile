@@ -36,6 +36,12 @@ gem 'jquery-rails'
 # Stock quote
 gem 'stock_quote', '~> 3.0'
 
+# Devise 4.8.1
+gem 'devise', '~> 4.8', '>= 4.8.1'
+
+# Dotenv-rails 2.7.6
+gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
